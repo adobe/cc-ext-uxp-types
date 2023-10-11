@@ -1,6 +1,6 @@
 {
     "name": "@adobe/cc-ext-uxp-types",
-    "version": "1.0.0",
+    "version": "7.3.0",
     "description": "Typescript definitions for the Adobe UXP JS API",
     "main": "uxp/index.d.ts",
     "repository": {
