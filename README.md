@@ -40,13 +40,29 @@ ts/jsconfig.json:
 Once you have setup the configuration, you will be able to leverage the type definitions for type suggestions, API usage and information, auto imports etc
 
 ### Known Issues
-* UXP code is primarily written in JavaScript, and not all parameters in the type definitions are explicitly specified with TypeScript types. Consequently, you may encounter "any" types for some parameters.
-* Support for few globals such as "window" and "navigator" in UXP is not currently available
-* Inherited properties show the names of derived class and not base class (known issue on the internal library being used )
-* Typedef API suggestions would not appear when the element is created with the document.createElement API  
+* UXP code is primarily written in JavaScript, and not all parameters in the type definitions are explicitly specified with the accurate types. Consequently, you may encounter "any" types for some parameters.
+* Type definitions for some of the UXP supported globals such as "window", "navigator" are not currently available.  
+Please refer to the [UXP documentation](https://developer.adobe.com/photoshop/uxp/2022/uxp-api/) for the available types.
+* Inherited properties show the names of derived class and not base class (known issue on the internal library being used ) for eg
+  
+ ```
+  const document = new Document();
+  document.isConnected();
+  ```
+  Type information will show ```isConnected``` as a property of ```Document``` (inherited) and not of the base class which is ```Node``` here.
+* Typedef API suggestions would not appear when the element is created with the document.createElement API for eg:
+```
+const img = document.createElement("img");
+```
+```img``` would not show expected type suggestions as per the current limitation.
+However an element created through constructor as below would show the correct type as expected:
+```
+const imgElement = new HTMLImageElement();
+```
+
 
 Please note that we will be gradually improving the type definitions and adding accurate types for UXP APIs along with some of the issues mentioned above.
-If you encounter any issues or have suggestions for improvements, please feel free to report them to contribute to the ongoing development and refinement of these type definitions.
+If you encounter any issues or have suggestions for improvements, please feel free to report them as a github issue here.
 
 ### Licensing
 
