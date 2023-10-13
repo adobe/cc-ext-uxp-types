@@ -7,6 +7,9 @@
       "type": "git",
       "url": "git+https://github.com/@adobe/cc-ext-uxp-types"
     },
+    "publishConfig": {
+      "access": "public"
+    },
     "keywords": [
       "adobe",
       "uxp",
