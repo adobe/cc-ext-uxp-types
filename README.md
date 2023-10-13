@@ -39,6 +39,14 @@ ts/jsconfig.json:
 ```
 Once you have setup the configuration, you will be able to leverage the type definitions for type suggestions, API usage and information, auto imports etc
 
+### Known Issues
+* UXP code is primarily written in JavaScript, and not all parameters in the type definitions are explicitly specified with TypeScript types. Consequently, you may encounter "any" types for some parameters.
+* Support for few globals such as "window" and "navigator" in UXP is not currently available
+* Inherited properties show the names of derived class and not base class (known issue on the internal library being used )
+* Typedef API suggestions would not appear when the element is created with the document.createElement API  
+
+Please note that we will be gradually improving the type definitions and adding accurate types for UXP APIs along with some of the issues mentioned above.
+If you encounter any issues or have suggestions for improvements, please feel free to report them to contribute to the ongoing development and refinement of these type definitions.
 
 ### Licensing
 
