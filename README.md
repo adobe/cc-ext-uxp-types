@@ -26,7 +26,7 @@ ts/jsconfig.json:
 ```
 {
   "compilerOptions": {
-    ...,
+     ..., // your existing configuration 
     // typeRoots override defaults, so be sure to include the implicit @types as well
     "typeRoots": [
       "node_modules/@types",
