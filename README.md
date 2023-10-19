@@ -30,10 +30,10 @@ ts/jsconfig.json:
     // typeRoots override defaults, so be sure to include the implicit @types as well
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/@adobe/cc-ext-uxp-types",
-      // Note that "DOM" is not included in lib options to exclude web DOM types
-      "lib": ["ES2015"] // required ES version 
-    ]
+      "node_modules/@adobe/cc-ext-uxp-types"
+    ],
+    // Note that "DOM" is not included in lib options to exclude web DOM types
+    "lib": ["ES2015"] // required ES version
   }
 }
 ```

@@ -5,7 +5,7 @@
     "main": "uxp/index.d.ts",
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/@adobe/cc-ext-uxp-types"
+      "url": "git+https://github.com/adobe/cc-ext-uxp-types"
     },
     "publishConfig": {
       "access": "public"
@@ -17,5 +17,5 @@
       "types",
       "typings"
     ],
-    "homepage": "https://github.com/@adobe/cc-ext-uxp-types#readme"
+    "homepage": "https://github.com/adobe/cc-ext-uxp-types#readme"
   }
