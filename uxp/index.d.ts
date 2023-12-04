@@ -9399,29 +9399,33 @@ declare module "uxp" {
          * @param entrypoints.commands.cancel - For future use.
          */
         setup(entrypoints: {
-            plugin: {
-                create: (...params: any[]) => any;
-                destroy: (...params: any[]) => any;
+            plugin?: {
+                create?: (...params: any[]) => any;
+                destroy?: (...params: any[]) => any;
             };
-            panels: {
-                create: (...params: any[]) => any;
-                show: (...params: any[]) => any;
-                hide: (...params: any[]) => any;
-                destroy: (...params: any[]) => any;
-                invokeMenu: (...params: any[]) => any;
-                customEntrypoint: (...params: any[]) => any;
-                menuItems: {
-                    id: string;
-                    label: string;
-                    enabled: boolean;
-                    checked: boolean;
-                    submenu: any[];
+            panels?: {
+                [key:string]:{ 
+                    create?: (rootNode: HTMLElement) => any;
+                    show?: (rootNode: HTMLElement, data: any) => any;
+                    hide?: (rootNode: HTMLElement, data: any) => any;
+                    destroy?: (rootNode: HTMLElement) => any;
+                    invokeMenu?: (id: string) => any;
+                    customEntrypoint?: (...params: any[]) => any;
+                    menuItems?: {
+                        id: string;
+                        label: string;
+                        enabled?: boolean;
+                        checked?: boolean;
+                        submenu?: any[];
+                    }[];
+              };
+            };
+            commands?: {
+                [key:string]:{ 
+                    run: (...params: any[]) => any;
+                    cancel?: (...params: any[]) => any;
                 };
-            }[];
-            commands: {
-                run: (...params: any[]) => any;
-                cancel: (...params: any[]) => any;
-            }[];
+            };
         }): void;
         /**
          * Get panel with specified id
