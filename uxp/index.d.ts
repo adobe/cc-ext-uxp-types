@@ -9430,15 +9430,13 @@ declare module "uxp" {
         /**
          * Get panel with specified id
          * @param id - panel id
-         * @returns - panel object for a valid id
-         *                           null for an invalid id
+         * @returns - panel object for a valid id null for an invalid id
          */
         getPanel(id: string): UxpPanelInfo;
         /**
          * Get command with specified id
          * @param id - command id
-         * @returns - command object for a valid id
-         *                             null for an invalid id
+         * @returns - command object for a valid id null for an invalid id
          */
         getCommand(id: string): UxpCommandInfo;
     }
